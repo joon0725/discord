@@ -1,6 +1,5 @@
 # 디스코드 모듈 import
 import discord
-from discord.ext import commands
 
 bot_token = ""
 
@@ -24,9 +23,4 @@ async def on_message(message):
 
 
 bot.run(bot_token)
-
-# 신버전 방식
-
-bot = commands.Bot(command_prefix='')
-
 

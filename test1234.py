@@ -161,4 +161,5 @@ async def on_message(message): # 입력되는 메세지에서 찾기
         return
     print(type(message.channel), message.channel)
     await message.channel.send(ai(message.content))
+
 bot.run(dc_token)
