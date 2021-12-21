@@ -3,10 +3,9 @@ from wit import Wit
 import random
 
 bot = discord.Client()
-access_token = "24XNFTTGWQLB33CZPZKOT2NDFSD7IS7W"
+access_token = ""
+dc_token = ""
 client = Wit(access_token=access_token)
-k = {}
-print(client.message("안녕"))
 
 
 def aii(message):
@@ -162,4 +161,4 @@ async def on_message(message): # 입력되는 메세지에서 찾기
         return
     print(type(message.channel), message.channel)
     await message.channel.send(aii(message.content))
-bot.run('OTEyNzM2MDA2MzA0ODMzNjA2.YZ0RpQ.GbWh9orpHDkTiQLfrVGbKCCDkSk')
+bot.run(dc_token)
