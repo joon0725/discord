@@ -8,7 +8,7 @@ dc_token = ""
 client = Wit(access_token=access_token)
 
 
-def aii(message):
+def ai(message):
     try:
         intent = client.message(message)['intents'][0]['name']
         entity = client.message(message)['entities']
@@ -160,5 +160,5 @@ async def on_message(message): # 입력되는 메세지에서 찾기
     if message.author.bot:  # discord.User.bot 프로퍼티가 참일 때
         return
     print(type(message.channel), message.channel)
-    await message.channel.send(aii(message.content))
+    await message.channel.send(ai(message.content))
 bot.run(dc_token)
