@@ -77,7 +77,7 @@ def ai(message):
 
         elif intent == 'Q_default':
             if 'wit$wikipedia_search_query:wikipedia_search_query' in entity:
-                query = entity['wit$wikipedia_search_query:wikipedia_search_query'][0]['body']
+                query = entity['wit$wikipedia_search_query:wikipedia_search_query'][0]['value']
             elif 'contact:contact' in entity:
                 query = entity['contact:contact'][0]['body']
             elif 'dev:dev' in entity:
@@ -159,7 +159,6 @@ async def on_message(message): # 입력되는 메세지에서 찾기
 
     if message.author.bot:  # discord.User.bot 프로퍼티가 참일 때
         return
-    print(type(message.channel), message.channel)
     await message.channel.send(ai(message.content))
 
 bot.run(dc_token)
